@@ -10,7 +10,7 @@ Group={{ sb_app_user_group }}
 # https://docs.spring.io/spring-boot/how-to/deployment/installing.html#howto.deployment.installing.system-d
 Type=exec
 EnvironmentFile={{ sb_applications_root_folder }}/{{ sb_app_name | upper }}/{{ sb_app_name }}.conf
-ExecStart=/usr/bin/java -jar "{{ sb_applications_root_folder }}/{{ sb_app_name | upper }}/{{ sb_app_name | upper }}"
+ExecStart=/usr/bin/java -jar "{{ sb_applications_root_folder }}/{{ sb_app_name | upper }}/{{ sb_app_name | upper }}" --spring.profiles.active={{ sb_app_profiles }}
 SuccessExitStatus=143
 
 [Install]
